@@ -19,7 +19,7 @@ print(f"Now, {name4}, I know {name5}'s friends, but you are not {name6}")
 
 rep_of_names = name*5
 print("Okay " + name + "your name..ha-ha some strange\nNo...no I'm not laughing but " + rep_of_names.upper())
-print(f"Sorry {rep_of_names.lower()}")
+print(f"Sorry {name.lower()}") #add lower()
 time.sleep(2)
 print("Okay, just try again")
 name3 = name2.replace("    ", "\n")
