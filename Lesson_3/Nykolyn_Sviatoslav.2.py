@@ -80,4 +80,4 @@ elif x == 0:
     print("The point on the axis Y")
 elif y == 0:
     print("The point on the axis X")
-
+print("So that's all. Have a nice day!")
