@@ -61,23 +61,23 @@ import random
 
 #task_4
 print("Now it is the last task, I think you're ready. I will need your help")
-print("Now, we will see in which coordinate quarter the coordinate point is located")
-print("So, please enter the point x and y: ")
+print("Now, we will see in which coordinate quarter the coordinate points are located")
+print("So, please enter the points x and y: ")
 x = float(input())
 y = float(input())
 print("So, let's check:")
 if x > 0 and y > 0:
-    print("It's easy point is located in I quarter")
+    print("It's easy points are located in I quarter")
 elif x < 0 and y > 0:
-    print("So, the point is located in II quarter")
+    print("So, the points are located in II quarter")
 elif x < 0 and y < 0:
-    print("Hmm, the point is located in III quarter")
+    print("Hmm, the points are located in III quarter")
 elif x > 0 and y < 0:
-    print("The point is located in IV quarter")
+    print("The point are located in IV quarter")
 elif x == 0 and y == 0:
-    print("Ha-ha the point at the beginning")
+    print("Ha-ha the points are at the beginning coordinate")
 elif x == 0:
-    print("The point on the axis Y")
+    print("The points are on the axis Y")
 elif y == 0:
-    print("The point on the axis X")
+    print("The points are on the axis X")
 print("So that's all. Have a nice day!")
