@@ -60,7 +60,7 @@ def rewrithing(sent, *unwanted_char):
 
 
 sent = str(input("Say me some interesting with symbols: "))
-print("Oh, interesting")
+print("Oh, interesting...")
 print(rewrithing(sent))
 
 
