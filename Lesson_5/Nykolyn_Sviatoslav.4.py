@@ -35,6 +35,7 @@ def menu():
             return menu()
 
 
+
 def add():
     # this function means to add a note. The user enters the text of the note,
     # which is stored in the program and is valid until its completion
@@ -61,6 +62,8 @@ def earliest():
     elif back == 'Exit':
         exit()
 
+
+
 def latest():
     # this function displays the saved notes in chronological order - from the most recent to the most recent
     print(list(my_list)[0::])
@@ -71,6 +74,8 @@ def latest():
         return menu()
     elif back == 'Exit':
         exit()
+
+
 
 def longest():
     # this function displays the saved notes in order of their length - from longest to shortest
@@ -83,6 +88,9 @@ def longest():
     elif back == 'Exit':
         exit()
 
+
+
+
 def shortest():
     # this function displays the saved notes in the order of their length - from shortest to longest
     print(sorted(my_list, key=len)[0::])
@@ -93,9 +101,6 @@ def shortest():
         return menu()
     elif back == 'Exit':
         exit()
-
-
-
 
 
 
