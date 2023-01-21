@@ -52,10 +52,10 @@ print("So let's find number that divisible by 6. Don't worry, I choose numbers m
 n = random.randint(1, 999)
 print(f"So I choose - {n}")
 sum_number = n//100 + n//10%10 + n%10
-if sum_number % 3 == 0:
+if (n % 10) % 2 == 0 and sum_number % 3 == 0:
     print("As you see, the number devisible by 6")
 else:
-    print("As you see, the number doesn't devisible by 6")
+    print("As you see, the number doesn't devisible by 6 ")
 
 # #task_4
 print("Now it is the last task, I think you're ready. I will need your help")
