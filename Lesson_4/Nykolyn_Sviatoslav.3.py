@@ -2,7 +2,7 @@ import math
 import string
 import re
 
-#task_1
+# task_1
 def range_n(arg_from: int, arg_to: int, number: int) -> bool:
 
     if  number > arg_from and number < arg_to :
@@ -56,7 +56,16 @@ print(palindrome(phrase))
 def rewrithing(sent, *unwanted_char):
     _char = str((input("Write unwanted char:")))
 
-    print(sent.translate({ord(i): None for i in _char}))
+    rewrite = sent.replace(_char, '')
+    print(rewrite)
+    print("If you want delete some symbol write 'y'")
+    answer = str(input())
+    if answer == 'y':
+        return rewrithing(rewrite)
+    else:
+        exit()
+
+
 
 
 sent = str(input("Say me some interesting with symbols: "))
