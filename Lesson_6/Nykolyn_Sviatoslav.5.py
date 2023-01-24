@@ -131,13 +131,19 @@ def unique_numbers():
 # task_4
 def listrange():
     print("Hi, I can create random items in lists and sorted them")
-    list1 = random.sample(range(1, 10000), 10)
-    list2 = random.sample(range(1, 10000), 11 )
-    print(list1)
-    print(list2)
-    print(sorted(list1, reverse=False))
-    print(sorted(list2, reverse=False))
-    back()
+    list_1 = random.sample(range(1, 10000), 10)
+    list_2 = random.sample(range(1, 10000), 11)
+    list_1_1 = [3, 4, 1] + list_1
+    list_2_1 = [4, 1, 3] + list_2
+    print(list_1_1)
+    print(list_2_1)
+    list_1_2 = set(list_1_1)
+    list_2_2 = set(list_2_1)
+    list_3 = list_1_2.intersection(list_2_2)
+    list_res1 = list(list_3)
+    print(list_res1)
+    print(sorted(list_res1, reverse=False))
+    return list_res1
 
 
 # task_5
