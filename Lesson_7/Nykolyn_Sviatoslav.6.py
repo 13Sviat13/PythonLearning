@@ -79,15 +79,14 @@ def sort_by_length():
     file = open("file with symbols.txt", "w")
     file_write = file.write(new)
     file.close()
-    file1 = open("file with symbols.txt", "r")
+    file1 = open("file with symbols.txt", "r+")
     line = file1.readlines()
     print(line)
-    sort1 = new.split()
-    line1 = sorted(sort1, key=len)
+    line1 = sorted(line, key=len)
+    file1.seek(0)
+    file1.writelines(line1)
     print(line1)
     file1.close()
-    f
-
 
 
 menu()
