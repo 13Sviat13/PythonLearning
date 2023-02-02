@@ -14,7 +14,7 @@ def menu():
         "\nExit")
     answer = str(input("Your choice is(You need enter from 1 to 5. If you want close the program enter 'exit'):\n"))
     if answer == '1':
-        return add()
+        add()
     else:                    #if everithing good this  condition responsible for performing others functions
         if len(my_list) == 0:  # if you want to choose some function but in your list don't exist any elements program
             # back to function add() to complete at least 2 elements
@@ -45,17 +45,19 @@ def back():
         exit()
 
 
-def add():
-    # this function means to add a note. The user enters the text of the note,
-    # which is stored in the program and is valid until its completion
-    while True:
-        # this function will continue until you enter stop
-        element = str(input("Please enter a number to add to list(if you finish write 'stop'): "))
-        if element == 'stop':
-            return menu()
-        else:
-            my_list.append(element)
-            print(f"Updated List {my_list}")
+def add(e=""):
+    # # this function means to add a note. The user enters the text of the note,
+    # # which is stored in the program and is valid until its completion
+    # while True:
+    #     # this function will continue until you enter stop
+    #     element = str(input("Please enter a number to add to list(if you finish write 'stop'): "))
+    #     if element == 'stop':
+    #         return menu()
+    #     else:
+    #         my_list.append(element)
+    #         print(f"Updated List {my_list}")
+    my_list.append(e)
+
 
 
 
@@ -76,8 +78,8 @@ def latest():
 
 def longest():
     # this function displays the saved notes in order of their length - from longest to shortest
-    print(sorted(my_list, key=len)[::-1])
-    back()
+    return sorted(my_list, key=len)[::-1]
+    # back()
 
 
 
