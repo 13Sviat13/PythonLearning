@@ -1,0 +1,85 @@
+import Lesson_9.lesson_9 as l
+import Lesson_5.Nykolyn_Sviatoslav_4 as file
+import pytest
+import math
+
+
+@pytest.mark.parametrize("a", [1, 2, 3, 4, 5, 6])
+def test_add(a):
+    b = len(file.my_list)
+    file.add(e=a)
+    assert len(file.my_list) == b+1
+
+@pytest.mark.parametrize("a, b", [("abd", "asdadd"), ("ab", "adsd")])
+def test_longest(a, b):
+    file.add(a)
+    file.add(b)
+    print(file.my_list)
+    assert file.longest()
+
+@pytest.mark.parametrize("a, b", [("gaer", "hirondsf"), ("bybu", "girls")])
+def test_earliest(a, b):
+    file.add(a)
+    file.add(b)
+    print(file.my_list)
+    assert file.earliest()
+
+
+@pytest.mark.parametrize("a, b", [("gaer", "hirondsf"), ("bybu", "girls")])
+def test_latest(a, b):
+    file.add(a)
+    file.add(b)
+    print(file.my_list)
+    assert file.latest()
+
+
+
+@pytest.mark.test_decorator
+def test_another_add():
+    assert l.add1(1, -2) == -1
+
+
+
+@pytest.mark.test_decorator
+def test_minus():
+    a = 5
+    b = 6
+    assert l.minus(b, a) == 1
+
+
+
+@pytest.mark.skipif
+def test_exit():
+    assert True
+
+
+@pytest.mark.foo
+@pytest.mark.parametrize(
+    ("n", "expected"), [(1, 2), pytest.param(1, 3, marks=pytest.mark.bar), (2, 3)]
+)
+def test_increment(n, expected):
+    assert n + 1 == expected
+
+
+def hello_world(*args, **kwargs):
+    return "Hello World"
+
+
+@pytest.mark.my_marker.with_args(hello_world)
+def test_with_args():
+    pass
+
+
+@pytest.mark.square
+def test_sqrt():
+   num = 25
+   assert math.sqrt(num) == 5
+
+@pytest.mark.square
+def testsquare():
+   num = 7
+   assert 7*7 == 40
+
+@pytest.mark.others
+def test_equality():
+   assert 10 == 11
