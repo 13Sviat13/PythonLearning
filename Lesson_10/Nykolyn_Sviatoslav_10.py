@@ -1,34 +1,34 @@
 
 # Task_1
-# class Employee:
-#
-#     def __init__(self, name, hours, salary):
-#         self.name = name
-#         self.hours = hours
-#         self.salary = salary
-#     def getInfo(self):
-#         return self.name, self.salary, self.hours
-#
-#     def AddSal(self):
-#         if self.salary < 500:
-#             self.salary += 10
-#         return self.salary
-#
-#
-#     def AddWork(self):
-#         if self.hours > 6:
-#             self.salary += 5
-#         return self.salary
-#
-#     def getFinalSalary(self):
-#         return self.AddSal() and self.AddWork()
-#
-#
-#
-# e = Employee(name=str(input("Write your employee name: ")),
-#              salary = int(input("Write employee's salary: ")),
-#              hours= int(input("Write employee's hours work: ")))
-# print(f'Final salary for {e.name} is {e.getFinalSalary()}')
+class Employee:
+
+    def __init__(self, name, hours, salary):
+        self.name = name
+        self.hours = hours
+        self.salary = salary
+    def getInfo(self):
+        return self.name, self.salary, self.hours
+
+    def AddSal(self):
+        if self.salary < 500:
+            self.salary += 10
+
+
+
+    def AddWork(self):
+        if self.hours > 6:
+            self.salary += 5
+
+
+    def getFinalSalary(self):
+        return self.AddSal() and self.AddWork()
+
+
+
+e = Employee(name=str(input("Write your employee name: ")),
+             salary = int(input("Write employee's salary: ")),
+             hours= int(input("Write employee's hours work: ")))
+print(f'Final salary for {e.name} is {e.getFinalSalary()}')
 
 
 # Task_2
@@ -88,31 +88,35 @@ e = Pizza('small', 1, 2, 1)
 print(f"{str(e.get_description())}... The price is {e.calc_cost()}")
 
 
-# class PizzaOrder(Pizza):
-#     def __init__(self):
-#         self.__pizzas = []
-#
-#     def add_pizza(self, pizza):
-#         self.__pizzas.append(pizza)
-#
-#     def get_pizzas(self):
-#         return self.__pizzas
-#
-#     def get_total_cost(self):
-#         cost = 0
-#         for pizza in self.__pizzas:
-#             cost += pizza.calc_cost()
-#         return cost
-#
-#
-#
-# pizza1 = Pizza('large', 2, 0, 1)
-# print(f"{str(pizza1.get_description())}... The price is {pizza1.calc_cost()}")
-# pizza2 = Pizza('medium', 0, 0, 0)
-# print(f"{str(pizza2.get_description())}... The price is {pizza2.calc_cost()}")
-# pizza3 = Pizza('small', 2, 5, 2)
-# print(f"{str(pizza3.get_description())}... The price is {pizza3.calc_cost()}")
-# pizza4 = Pizza('large', 2, 1, 2)
-#
-#
-# PizzaOrder()
+class PizzaOrder(Pizza):
+    def __init__(self):
+        self.__pizzas = []
+
+    def add_pizza(self, pizza):
+        self.__pizzas.append(pizza)
+
+    def get_pizzas(self):
+        return self.__pizzas
+
+    def get_total_cost(self):
+        cost = 0
+        for pizza in self.__pizzas:
+            cost += pizza.calc_cost()
+        return cost
+
+
+
+pizza1 = Pizza('large', 2, 0, 1)
+print(f"{str(pizza1.get_description())}... The price is {pizza1.calc_cost()}")
+pizza2 = Pizza('medium', 0, 0, 0)
+print(f"{str(pizza2.get_description())}... The price is {pizza2.calc_cost()}")
+pizza3 = Pizza('small', 2, 5, 2)
+print(f"{str(pizza3.get_description())}... The price is {pizza3.calc_cost()}")
+pizza4 = Pizza('large', 2, 1, 2)
+
+
+pizzaOrder = PizzaOrder()
+pizzaOrder.add_pizza(pizza1)
+pizzaOrder.add_pizza(pizza2)
+pizzaOrder.add_pizza(pizza3)
+print(pizzaOrder.get_total_cost())
