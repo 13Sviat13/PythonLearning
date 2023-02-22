@@ -1,5 +1,5 @@
 import csv
-import pandas as pd
+import json
 
 class Product:
     def __init__(self, category, name, price, quantity):
@@ -48,19 +48,6 @@ class Bluetooth_speakers(Product):
 
 
 
-# class Shop(Product):
-#     def __init__(self):
-#         self.products = []
-#
-#         with open('Product.csv', newline='') as csvfile:
-#             reader = csv.reader(csvfile)
-#             next(reader)  # пропускаємо заголовок
-#             for row in reader:
-#                 name, description, price, quantity, manufacturer, *args = row
-#                 if args[0]:  # якщо діагональ є, то це монітор
-#                     product = Monitor(name, description, float(price), int(quantity), manufacturer, *args)
-#                 else:  # інакше це клавіатура
-#                     product = Keyboard(name, description, float(price), int(quantity), manufacturer)
 
 
 my_products = [
@@ -97,33 +84,34 @@ def read_products_from_file(file_path):
     with open(file_path, 'r') as r:
         csv_dict_reader = csv.DictReader(r)
         for row in csv_dict_reader:
+            additional_fields = json.loads(row['additional_fields'])
             if row['category'] == 'TV':
                 print(TV(
                     name=row['name'],
                     price=row['price'],
                     quantity=row['quantity'],
-                    brand=row['additional_fields']['brand'],
-                    diagonin=row['additional_fields']['diagonal'],
-                    smartTV=row['additional_fields']['smartTV']
+                    brand=additional_fields['brand'],
+                    diagonin=additional_fields['diagonal'],
+                    smartTV=additional_fields['smartTV']
                       ))
             elif row['category'] == 'Headphones':
                 print(Headphones(
                     name=row['name'],
                     price=row['price'],
                     quantity=row['quantity'],
-                    brand=row['additional_fields']['brand'],
-                    bluetooth=row['additional_fields']['bluetooth'],
-                    headphone=row['additional_fields']['headphone_type'],
-                    battery=row['additional_fields']['battery_hours']
+                    brand=additional_fields['brand'],
+                    bluetooth=additional_fields['bluetooth'],
+                    headphone=additional_fields['headphone_type'],
+                    battery=additional_fields['battery_hours']
             ))
             elif row['category'] == "Bluetooth speakers":
                 print(Bluetooth_speakers(
                     name=row['name'],
                     price=row['price'],
                     quantity=row['quantity'],
-                    brand=row['additional_fields']['brand'],
-                    usb=row['additional_fields']['USB-port'],
-                    version=row['additional_fields']['bluetooth_version']
+                    brand=additional_fields['brand'],
+                    usb=additional_fields['USB-port'],
+                    version=additional_fields['bluetooth_version']
                 ))
             else:
                 raise ValueError(f'Unknown category: {row["category"]}')
